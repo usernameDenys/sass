@@ -1,0 +1,56 @@
+@each $kay, $val in $colors {
+    .text-#{$kay} {
+        color: $val;
+    }
+    .text-hover-#{$kay} {
+        &:hover {
+            color: $val;
+        }
+        // &:last-child {}
+        // &:nth-child() {}
+    }
+    .bg-#{$kay} {
+        background-color: $val;
+    }
+
+    @if($val !=black and $val !=white) {
+
+        //light variations
+        @for $i from 1 through 9 {
+            .text-#{$kay}-light-#{$i} {
+                color: mix(white, $val, $i *10);
+            }
+
+            .text-hover-#{$kay}-light-#{$i} {
+                &:hover {
+                    color: mix(white, $val, $i *10);
+                }   
+            }
+
+            .bg-#{$kay}-light-#{$i} {
+                background-color: mix(white, $val, $i *10);
+            }
+        }
+
+
+        //dark variations
+        @for $i from 1 through 9 {
+            .text-#{$kay}-dark-#{$i} {
+                color: mix(black, $val, $i *10);
+            }
+
+            .text-hover-#{$kay}-dark-#{$i} {
+                &:hover {
+                    color: mix(black, $val, $i *10);
+                }   
+            }
+
+            .bg-#{$kay}-dark-#{$i} {
+                background-color: mix(black, $val, $i *10);
+            }
+        }
+    }
+
+
+}
+
