@@ -1,15 +1,15 @@
-@each $kay, $val in $colors {
-    .text-#{$kay} {
+@each $key, $val in $colors {
+    .text-#{$key} {
         color: $val;
     }
-    .text-hover-#{$kay} {
+    .text-hover-#{$key} {
         &:hover {
             color: $val;
         }
         // &:last-child {}
         // &:nth-child() {}
     }
-    .bg-#{$kay} {
+    .bg-#{$key} {
         background-color: $val;
     }
 
@@ -17,36 +17,36 @@
 
         //light variations
         @for $i from 1 through 9 {
-            .text-#{$kay}-light-#{$i} {
-                color: mix(white, $val, $i *10);
+            .text-#{$key}-light-#{$i} {
+                color: mix(white, $val, $i * 10%);
             }
 
-            .text-hover-#{$kay}-light-#{$i} {
+            .text-hover-#{$key}-light-#{$i} {
                 &:hover {
-                    color: mix(white, $val, $i *10);
+                    color: mix(white, $val, $i * 10%);
                 }   
             }
 
-            .bg-#{$kay}-light-#{$i} {
-                background-color: mix(white, $val, $i *10);
+            .bg-#{$key}-light-#{$i} {
+                background-color: mix(white, $val, $i * 10%);
             }
         }
 
 
         //dark variations
         @for $i from 1 through 9 {
-            .text-#{$kay}-dark-#{$i} {
-                color: mix(black, $val, $i *10);
+            .text-#{$key}-dark-#{$i} {
+                color: mix(black, $val, $i * 10%);
             }
 
-            .text-hover-#{$kay}-dark-#{$i} {
+            .text-hover-#{$key}-dark-#{$i} {
                 &:hover {
-                    color: mix(black, $val, $i *10);
+                    color: mix(black, $val, $i * 10%);
                 }   
             }
 
-            .bg-#{$kay}-dark-#{$i} {
-                background-color: mix(black, $val, $i *10);
+            .bg-#{$key}-dark-#{$i} {
+                background-color: mix(black, $val, $i * 10%);
             }
         }
     }
